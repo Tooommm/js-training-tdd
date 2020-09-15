@@ -11,9 +11,24 @@
  */
 
 // Your code:
+function cutFirst(str) {
+  return str.slice(2);
+}
+
+function cutLast(str) {
+  return str.slice(0,-2);
+}
 
 //* Begin of tests
 const assert = require('assert');
 
-assert.fail('You must write your own tests');
+assert.strictEqual(typeof cutFirst, 'function', 'Should be a function');
+assert.strictEqual(cutFirst.length, 1, 'Should takes 1 arguments');
+assert.strictEqual(cutFirst('hello'), 'llo');
+assert.strictEqual(cutFirst('xxbieng!'), 'bieng!');
+
+assert.strictEqual(typeof cutLast, 'function', 'Should be a function');
+assert.strictEqual(cutLast.length, 1, 'Should takes 1 arguments');
+assert.strictEqual(cutLast('hello'), 'hel');
+assert.strictEqual(cutLast('bieng!xx'), 'bieng!');
 // End of tests */
